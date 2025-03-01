@@ -20,3 +20,14 @@ jobs:
 
       - name: Run Tests
         run: echo "Running tests..."
+  nose-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: pip install nose
+
+      - name: Run Nose Tests
+        run: nosetests
